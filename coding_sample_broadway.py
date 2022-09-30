@@ -1,4 +1,5 @@
 import numpy as np
+
 class TreeNode:
     def __init__(self, leafID, children, lengths, binary=False):
         self.leafID = leafID
@@ -93,6 +94,7 @@ def check_tree(node:TreeNode, level=0):
             check_tree(node.children[i], level + 1)
     print("level: {}, num_children: {}".format(level, num_children))
     print(node.lengths)
+
 mean_newick = "((((((0:10.992344951,8:18.3469999877):0.0055844803,3:11.2841961677):0.0023049787,1:12.4539381766):0.0013692922,6:13.6323866119):0.0019777971,(2:12.3960489787,7:16.6629964286):0.0079167817):0.0028297773,((4:16.3060502795,5:14.870542213):0.0020189038,9:10.4676122362):0.0008103202)"
 mean_tree = newick_to_treenode(mean_newick)
 test_newick = "(0:6.0,(1:5.0,2:3.0,3:4.0):5.0,4:11.0);"
